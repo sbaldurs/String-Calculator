@@ -4,11 +4,19 @@ public class StringCalculator {
 		int sum = 0;
 		int count = 0;
 		int numLength = 0;
+		char delOne = ',';
+		char delTwo = '\n';
 		boolean inputCorrect = true;
 		String comment = "Negatives not allowed: ";
 		
 		if(numbers.length() == 0) {
 			return 0;
+		}
+		
+		if(numbers.charAt(0) == '/') {
+			delOne = numbers.charAt(2);
+			delOne = numbers.charAt(2);
+			numbers = numbers.substring(4);
 		}
 		
 		for(int i = 0; i < numbers.length(); i++) {
@@ -18,7 +26,7 @@ public class StringCalculator {
 				}
 				count++;
 				numLength = i;
-				while(numbers.charAt(numLength) != ',' && numbers.charAt(numLength) != '\n' && numLength < (numbers.length() - 1)) {
+				while(numbers.charAt(numLength) != delOne && numbers.charAt(numLength) != delTwo && numLength < (numbers.length() - 1)) {
 						numLength++;
 				}
 				if(numLength == numbers.length()-1) {
@@ -38,7 +46,7 @@ public class StringCalculator {
 		String currNumber = "";
 		for(int i = 0; i < numbers.length(); i++) {
 			
-			if(numbers.charAt(i) != ',' && numbers.charAt(i) != '\n') {			
+			if(numbers.charAt(i) != delOne && numbers.charAt(i) != delTwo) {			
 				currNumber += numbers.charAt(i);
 			}
 			else {
@@ -66,6 +74,7 @@ public class StringCalculator {
 		//String s7 = "-1,2";
 		//String s8 = "2,-4,3,-5";
 		String s9 = "1001,2";
+		String s10 = "//;\n1;2";
 		
 		//int sum1 = Add(s1);
 		//int sum2 = Add(s2);
@@ -76,6 +85,7 @@ public class StringCalculator {
 		//int sum7 = Add(s7);
 		//int sum8 = Add(s8);
 		int sum9 = Add(s9);
+		int sum10 = Add(s10);
 		
 		//System.out.println(sum1);
 		//System.out.println(sum2);
@@ -86,5 +96,6 @@ public class StringCalculator {
 		//System.out.println(sum7);
 		//System.out.println(sum8);
 		System.out.println(sum9);
+		System.out.println(sum10);
 	} 
 }
