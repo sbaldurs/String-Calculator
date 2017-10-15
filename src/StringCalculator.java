@@ -20,9 +20,16 @@ public class StringCalculator {
 	}
 	
 	public static void main(String[] args) {
-		String s = "1,2";
-		int sum = Add(s);
+		String s1 = "";
+		String s2 = "1";
+		String s3 = "1,2";
 		
-		System.out.println(sum);
+		int sum1 = Add(s1);
+		int sum2 = Add(s2);
+		int sum3 = Add(s3);
+		
+		System.out.println(sum1);
+		System.out.println(sum2);
+		System.out.println(sum3);
 	} 
 }
