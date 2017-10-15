@@ -24,7 +24,7 @@ public class StringCalculator {
 		String s3 = "1,2";
 		String s4 = "1,2,3,4,5";
 		String s5 = "1,2,3,4,5,6,7,8,9,10";
-		String s6 = "1/n2,3";
+		String s6 = "1\n2,3";
 		
 		int sum1 = Add(s1);
 		int sum2 = Add(s2);
